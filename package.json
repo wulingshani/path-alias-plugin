@@ -1,0 +1,58 @@
+{
+  "name": "path-alias-plugin",
+  "version": "0.1.0",
+  "description": "Drop-in path alias support for Node.js/TypeScript projects with compile-time AST rewriting and runtime fallback.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "path-alias": "./bin/path-alias.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./register": {
+      "types": "./register.d.ts",
+      "default": "./register.js"
+    }
+  },
+  "files": [
+    "bin",
+    "dist",
+    "register.js",
+    "register.d.ts",
+    "README.md",
+    "MIGRATION.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "path-alias",
+    "tsconfig-paths",
+    "typescript",
+    "midway",
+    "require-hook"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "source-map": "^0.7.4",
+    "typescript": ">=5.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
