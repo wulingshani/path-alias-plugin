@@ -9,11 +9,19 @@ TypeScript's `paths` field is only for type checking. At runtime, `require('@/x'
 - **Compile-time rewriter** (main channel): After `tsc`/`mwtsc` emits `dist/`, `path-alias build` walks the output, parses each file with the TypeScript AST, and replaces `@/x` with real relative paths. The shipped artifact contains zero aliases — pkg/Docker/PM2 work unchanged.
 - **Runtime hook** (fallback): For dev mode where you don't run `build`, `require('path-alias-plugin/register')` patches `Module._resolveFilename` at process start. Auto-disabled under `pkg`.
 
+## Requirements
+
+- Node.js **>= 20**
+- TypeScript **>= 5.0** (peer dependency — uses the version installed in your project)
+- Package manager: **pnpm**, **npm**, or **yarn** all work
+
 ## Quick Start
 
-1. Install:
+1. Install (pick one):
    ```bash
-   npm install --save-dev path-alias-plugin
+   pnpm add -D path-alias-plugin     # pnpm
+   npm install --save-dev path-alias-plugin   # npm
+   yarn add -D path-alias-plugin     # yarn
    ```
 
 2. Add `baseUrl` + `paths` to your `tsconfig.json`:

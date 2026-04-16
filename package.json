@@ -39,7 +39,10 @@
     "tsconfig-paths",
     "typescript",
     "midway",
-    "require-hook"
+    "require-hook",
+    "pnpm",
+    "npm",
+    "yarn"
   ],
   "author": "wulingshan",
   "repository": {
@@ -65,6 +68,6 @@
     "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=20.0.0"
   }
 }
